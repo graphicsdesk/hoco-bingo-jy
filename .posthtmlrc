@@ -7,12 +7,35 @@
       "root": "./src/partials",
       "locals": {
         "top": [],
-        "body": [],
+        "body": [
+          {
+            "type": "graphic",
+            "value": {
+              "asset": "bingo.html"
+            }
+          },
+          {
+            "type": "text",
+            "value": "<i>Staff writer Suhani Arora </i><i>can be contacted at </i><i>suhani.arora@columbiaspectator.com</i><i>. </i><i> </i><i>Follow Spectrum on </i><a href=\"https://www.instagram.com/cuspectrum/\"><i>X</i></a><i> </i><a href=\"https://twitter.com/cuspectrum?lang=en\"><i>@CUSpectrum</i></a><i>. </i>"
+          },
+          {
+            "type": "text",
+            "value": "<i>Graphics Editor Jenny Ye can be contacted at </i><i>jenny.ye@columbiaspectator.com</i><i>. </i><i>Follow Spectator on X </i><a href=\"https://twitter.com/columbiaspec?lang=en\"><i>@ColumbiaSpec</i></a><i>.</i>"
+          },
+          {
+            "type": "text",
+            "value": "<b><i>Want to keep up with breaking news? Subscribe to our </i></b><a href=\"https://columbiaspectator.us4.list-manage.com/subscribe?u=a3d2eeb1ae5560ca04f82f042&id=e51c51d62d\"><b><i>email newsletter </i></b></a><b><i>and like Spectator on </i></b><a href=\"https://www.facebook.com/columbiaspectator\"><b><i>Facebook</i></b></a><b><i>. </i></b>"
+          }
+        ],
+        "headline": "Homecoming Bingo",
+        "date": "October 8, 2025",
+        "byline": "By <a href=\"https://www.columbiaspectator.com/contributors/suhani-arora/\">Suhani Arora</a>",
+        "byline2": "Development by <a href=\"https://www.columbiaspectator.com/contributors/jenny-ye/\">Jenny Ye</a>, Emilia Lebeau, and Emily Ta",
         "USE_NEWS_NAV": true,
         "USE_EYE_NAV": false,
         "USE_COVER_HED": false,
         "IS_EMBED": false,
-        "DOC_URL": null
+        "DOC_URL": "https://docs.google.com/document/d/1T-VaO3ASsOGOtTIcmBO8znIeZAO1MaP8bhtTHhOkGTY/edit?tab=t.0"
       }
     }
   }
