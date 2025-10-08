@@ -139,6 +139,9 @@
     <button id="bingo-reset" class="btn ghost" title="Clear all marks">Reset</button>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+
   <script>
     (function () {
       const items = [
@@ -183,6 +186,11 @@
 
       function saveState(state) {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+
+        if (checkBingo(state)) {
+          triggerConfetti();
+        }
+
       }
 
       const state = loadState();
@@ -265,6 +273,45 @@
           if (span) span.style.fontSize = minSize + "px";
         });
       }
+
+      function triggerConfetti() {
+        if (typeof confetti !== "undefined") {
+          confetti({
+            particleCount: 120,
+            spread: 90,
+            origin: { y: 0.6 }
+          });
+        } else {
+          console.log("🎉 Bingo!");
+        }
+      }
+
+
+      function checkBingo(state) {
+        const size = 5;
+        const lines = [];
+
+        // Rows
+        for (let r = 0; r < size; r++) {
+          lines.push([0, 1, 2, 3, 4].map(c => r * size + c));
+        }
+
+        // Columns
+        for (let c = 0; c < size; c++) {
+          lines.push([0, 1, 2, 3, 4].map(r => r * size + c));
+        }
+
+        // Diagonals
+        lines.push([0, 6, 12, 18, 24]); // top-left to bottom-right
+        lines.push([4, 8, 12, 16, 20]); // top-right to bottom-left
+
+        // Ignore center (free space)
+        const isChecked = (i) => (i === 12 ? true : state[i]);
+
+        // Check each line
+        return lines.some(line => line.every(i => isChecked(i)));
+      }
+
 
       window.addEventListener("load", resizeAllText);
       window.addEventListener("resize", resizeAllText);
